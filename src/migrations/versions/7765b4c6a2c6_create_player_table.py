@@ -20,10 +20,8 @@ table_name = 'player'
 def upgrade() -> None:
     op.create_table(
         table_name,
-        sa.Column('id', sa.Integer(), primary_key=True),
-        sa.Column('name', sa.String(50), nullable=False),
-        sa.Column('galos_applied', sa.Integer(), default=0, nullable=False),
-        sa.Column('galos_received', sa.Integer(), default=0, nullable=False)
+        sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('name', sa.String(50), nullable=False)
     )
 
 

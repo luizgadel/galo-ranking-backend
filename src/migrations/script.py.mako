@@ -15,6 +15,7 @@ down_revision = ${repr(down_revision)}
 branch_labels = ${repr(branch_labels)}
 depends_on = ${repr(depends_on)}
 
+table_name = ''
 
 def upgrade() -> None:
     ${upgrades if upgrades else "pass"}

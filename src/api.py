@@ -5,9 +5,9 @@ from src.config.config_db import origins
 from src.route.routes import routes
 
 """
-    @brief Galo - Sistema de pontuação para Dominó
+    @brief      Galo - Sistema de pontuação para Dominó
     
-    @detailsn Main file. Instance the FastAPI and include main endpoints of application
+    @details    Main file. Instance the FastAPI and include main endpoints of application
     
     @author     Luiz Gadelha <>
     @since      Mar 1, 2024
