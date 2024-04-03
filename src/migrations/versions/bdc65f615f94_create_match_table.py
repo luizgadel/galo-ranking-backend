@@ -22,11 +22,12 @@ def upgrade() -> None:
     op.create_table(
         table_name,
         sa.Column('id', sa.Integer, primary_key=True),
-        sa.Column('team_one', sa.Integer, sa.ForeignKey('team.id'), nullable=False),
-        sa.Column('team_two', sa.Integer, sa.ForeignKey('team.id'), nullable=False),
+        sa.Column('team_one_id', sa.Integer, sa.ForeignKey('team.id'), nullable=False),
+        sa.Column('team_two_id', sa.Integer, sa.ForeignKey('team.id'), nullable=False),
         sa.Column('score_team_one', sa.Integer, nullable=False, default=0),
         sa.Column('score_team_two', sa.Integer, nullable=False, default=0),
-        sa.Column('data_hora', sa.DateTime, nullable=False, default=sa.func.current_timestamp())
+        sa.Column('date_time_start', sa.DateTime, nullable=False, default=sa.func.current_timestamp()),
+        sa.Column('date_time_end', sa.DateTime, nullable=True)
     )
 
 
