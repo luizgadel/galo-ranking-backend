@@ -10,7 +10,7 @@ from src.route.routes import routes
     @details    Main file. Instance the FastAPI and include main endpoints of application
     
     @author     Luiz Gadelha <>
-    @since      Mar 1, 2024
+    @since      Apr 1, 2024
 """
 
 description = """
@@ -23,7 +23,10 @@ This application's main objective is to manage data from the Galo App. \n
 Below we have all methods of user interaction with our system.
 """
 
-tags_metadata = [{}]
+tags_metadata = [
+    {"name": "Player", "description": "Players operations"},
+    {"name": "Match", "description": "Matches operations"}
+]
 
 app = FastAPI(
     title="Galo API",

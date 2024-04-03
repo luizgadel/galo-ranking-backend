@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 
-from config.config_db import Base
+from src.config.config_db import Base
 
 class Team(Base):
     __tablename__ = "team"

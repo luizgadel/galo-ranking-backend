@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 
-from config.config_db import Base
+from src.config.config_db import Base
 
 class Player(Base):
     __tablename__ = "player"

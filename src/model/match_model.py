@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, DateTime, ForeignKey, func
 
-from config.config_db import Base
+from src.config.config_db import Base
 
 class Match(Base):
     __tablename__ = "match"

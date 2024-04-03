@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, ForeignKey
 
-from config.config_db import Base
+from src.config.config_db import Base
 
 class Galo(Base):
     __tablename__ = "galo"
