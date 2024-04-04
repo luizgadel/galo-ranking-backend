@@ -21,8 +21,8 @@ def upgrade() -> None:
     op.create_table(
         table_name,
         sa.Column('id', sa.Integer, primary_key=True),
-        sa.Column('player_one', sa.Integer, sa.ForeignKey('player.id'), nullable=False),
-        sa.Column('player_two', sa.Integer, sa.ForeignKey('player.id'), nullable=False),
+        sa.Column('player_one_id', sa.Integer, sa.ForeignKey('player.id'), nullable=False),
+        sa.Column('player_two_id', sa.Integer, sa.ForeignKey('player.id'), nullable=False),
         sa.Column('team_name', sa.String(50), nullable=False)
     )
 

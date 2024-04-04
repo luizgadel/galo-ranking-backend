@@ -15,4 +15,9 @@ class BaseRepository(Generic[TModel, TCreate]):
         db.add(db_obj)
         await db.commit()
         return db_obj
+    
+    async def select_first(self, db: AsyncSession, stmt):
+        db_rows = await db.scalars(stmt)
+        first_row = db_rows.first()
+        return first_row
         
