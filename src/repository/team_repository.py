@@ -1,4 +1,4 @@
-from sqlalchemy import and_, or_, select
+from sqlalchemy import and_, or_, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.repository.base_repository import BaseRepository
@@ -15,7 +15,7 @@ class TeamRepository(BaseRepository[Team, TeamCreate]):
         db: AsyncSession,
         player_one_id: int,
         player_two_id: int
-    ):
+    ) -> Team:
         return await self.select_first(
             db, 
             select(self.model).where(
@@ -35,5 +35,14 @@ class TeamRepository(BaseRepository[Team, TeamCreate]):
     async def get_by_team_name(self, db: AsyncSession, team_name: str) -> Team:
         return await self.select_first(
             db, 
-            select(self.model).where(self.model.team_name == team_name)
+            select(self.model).where(self.model.name == team_name)
         )
+    
+    async def update_name(self, db: AsyncSession, team_name: str, team_id: int) -> Team:
+        response = await db.execute(
+            update(self.model)
+            .where(self.model.id == team_id)
+            .values({"name": team_name})
+        )
+        await db.commit()
+        return response

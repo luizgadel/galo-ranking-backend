@@ -28,8 +28,8 @@ class MatchController:
                 detail="Cannot create a new match since there is an ongoing one."
             )
         else:
-            team_one = await self.team_controller.get_team_by_name(db, team_one_name, to_player_one, to_player_two)  
-            team_two = await self.team_controller.get_team_by_name(db, team_two_name, tt_player_one, tt_player_two)
+            team_one = await self.team_controller.persist_team(db, team_one_name, to_player_one, to_player_two)  
+            team_two = await self.team_controller.persist_team(db, team_two_name, tt_player_one, tt_player_two)
             
             match_create = MatchCreate(
                 team_one_id=team_one.id,

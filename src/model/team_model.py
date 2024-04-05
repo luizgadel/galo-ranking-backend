@@ -8,4 +8,4 @@ class Team(Base):
     id = Column(Integer, primary_key=True, index=True)
     player_one_id = Column(Integer, ForeignKey('player.id'), nullable=False)
     player_two_id = Column(Integer, ForeignKey('player.id'), nullable=False)
-    team_name = Column(String(50), nullable=False)
+    name = Column(String(50), nullable=False)

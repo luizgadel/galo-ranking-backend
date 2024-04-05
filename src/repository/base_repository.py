@@ -1,6 +1,5 @@
 from typing import Generic, TypeVar
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import insert
 
 TModel = TypeVar("TModel")
 TCreate = TypeVar("TCreate")

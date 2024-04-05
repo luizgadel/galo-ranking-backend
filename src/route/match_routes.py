@@ -22,9 +22,9 @@ class MatchRoutes:
     async def create_match(
         to_player_one: str,
         to_player_two: str,
+        team_one_name: str,
         tt_player_one: str,
         tt_player_two: str,
-        team_one_name: str,
         team_two_name: str,
         db: AsyncSession = Depends(get_async_session)
     ):
